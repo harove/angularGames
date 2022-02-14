@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PotterService {
 
-  urlPotter = 'http://hp-api.herokuapp.com/api/characters'
+  urlPotter = 'http://hp-api.herokuapp.com/api/characters/house/Gryffindor'
 
   constructor(private http:HttpClient) { }
 
