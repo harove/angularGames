@@ -18,7 +18,7 @@ export class ThronesComponent implements OnInit {
 
   getThrones(){
     this.thronesService.getThrones().subscribe(data=>{
-      console.log(data)
+      this.thrones = data
     })
   }
 
