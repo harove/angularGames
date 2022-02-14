@@ -1,3 +1,4 @@
+import { PotterService } from './../services/potter.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PotterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private potterService: PotterService) { }
 
   ngOnInit(): void {
+    this.getPotter()
   }
 
+
+  getPotter(){
+    this.potterService.getPotter().subscribe(data=>{
+      console.log(data)
+    })
+  }
 }

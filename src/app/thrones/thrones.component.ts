@@ -1,3 +1,4 @@
+import { ThronesService } from './../services/thrones.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThronesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private thronesService: ThronesService) { }
+
+  thrones:any
 
   ngOnInit(): void {
+    this.getThrones()
+  }
+
+  getThrones(){
+    this.thronesService.getThrones().subscribe(data=>{
+      console.log(data)
+    })
   }
 
 }
